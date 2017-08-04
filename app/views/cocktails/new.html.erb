@@ -1,7 +1,10 @@
-<h1>Cocktail#new</h1>
-<p>Find me in app/views/cocktail/new.html.erb</p>
 
-<%= simple_form_for @cocktail do |cocktail| %>
-  <%= cocktail.input :name%>
-  <%= cocktail.button :submit %>
-<% end %>
+<div class='container text-center'>
+  <h1>New Cocktail</h1>
+  <div class='text-center flex-box'> 
+    <%= simple_form_for @cocktail do |cocktail| %>
+      <%= cocktail.input :name%>
+      <%= cocktail.button :submit %>
+    <% end %>
+  </div>
+</div>
