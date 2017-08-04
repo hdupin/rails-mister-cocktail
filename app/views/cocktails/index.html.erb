@@ -1,12 +1,19 @@
 <div class='container'>
+      
       <%@cocktails.each do |cocktail|%>
-        <div class="card col-sm-6 col-md-3 col-md-2">
-          <%=link_to image_tag(cocktail.picture,:class => "img-responsive card-img"), cocktail_path(cocktail)%>
-          <h4 class="card-title">
-            <%=cocktail.name%>
-          </h4>
-          <%=link_to "Delete", cocktail_path(cocktail), :method => :delete, :class => "btn btn-primary"%>
-          <%=link_to "Edit", edit_cocktail_path(cocktail), :class => "btn btn-primary"%>
+        <div class="col-sm-6 col-md-3 col-md-2">
+          <div class="card">
+            <div class="card-image background-image">
+              <%=link_to image_tag(cocktail.picture,:class => "img-responsive"), cocktail_path(cocktail)%>
+            </div>
+            <div class="card-content">
+              <h4 class="card-title">
+                <%=cocktail.name%>
+              </h4>
+              <%=link_to "Delete", cocktail_path(cocktail), :method => :delete, :class => "btn btn-primary"%>
+              <%=link_to "Edit", edit_cocktail_path(cocktail), :class => "btn btn-primary"%>
+            </div>
+          </div>  
          </div>
       <%end%>
 </div>
