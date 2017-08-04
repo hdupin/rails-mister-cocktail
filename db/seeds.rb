@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-25.times do
-  Cocktail.create(name: Faker::Beer.name, picture: "https://static.pexels.com/photos/34293/lime-club-soda-drink-cocktail.jpg")  
-end
+ 5.times do
+    url = "http://loremflickr.com/320/240/cocktail"
+    cocktail = Cocktail.new(name: Faker::Beer.name)
+    cocktail.remote_picture_url = url
+    cocktail.save  
+ end
 
-50.times do
-  Ingredient.create(name: Faker::Food.ingredient)  
-end
+  50.times do
+    Ingredient.create(name: Faker::Food.ingredient)  
+  end

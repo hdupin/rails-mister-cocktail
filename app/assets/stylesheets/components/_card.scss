@@ -2,6 +2,8 @@
 
 .card-image{
   position: relative;
+  height: 200px;
+  width: 200px;
 }
 
 .card-content{
@@ -10,3 +12,23 @@
     left: 38px;
 }
 
+.container{
+  padding: 50px;
+}
+
+.card-title{
+  color: white;
+  font-size: 15px;
+}
+
+.flex-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.flex-item{
+  text-align: center;
+  padding: 20px;
+}

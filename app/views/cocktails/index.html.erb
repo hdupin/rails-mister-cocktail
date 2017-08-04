@@ -1,17 +1,18 @@
 <div class='container'>
-      
       <%@cocktails.each do |cocktail|%>
         <div class="col-sm-6 col-md-3 col-md-2">
           <div class="card">
-            <div class="card-image background-image">
-              <%=link_to image_tag(cocktail.picture,:class => "img-responsive"), cocktail_path(cocktail)%>
-            </div>
+            <%= link_to cocktail_path(cocktail) do %>
+              <div class="card-image background-image img-responsive" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.displayed_picture, height: 200, width: 200, crop: :fill %>')">
+                <%link_to "Show Cocktail", cocktail_path(cocktail)%>
+              </div>
+            <% end %>
             <div class="card-content">
               <h4 class="card-title">
-                <%=cocktail.name%>
+                <strong><%=cocktail.name%></strong>
               </h4>
-              <%=link_to "Delete", cocktail_path(cocktail), :method => :delete, :class => "btn btn-primary"%>
-              <%=link_to "Edit", edit_cocktail_path(cocktail), :class => "btn btn-primary"%>
+              <%=link_to "Delete", cocktail_path(cocktail), :method => :delete, :class => "btn btn-primary btn-xs"%>
+              <%=link_to "Edit", edit_cocktail_path(cocktail), :class => "btn btn-primary btn-xs"%>
             </div>
           </div>  
          </div>

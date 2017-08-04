@@ -1,10 +1,12 @@
 
 <div class='container text-center'>
   <h1>New Cocktail</h1>
-  <div class='text-center flex-box'> 
+  <div class='flex-container'> 
     <%= simple_form_for @cocktail do |cocktail| %>
-      <%= cocktail.input :name%>
-      <%= cocktail.button :submit %>
+      <div><%= cocktail.input :name%></div>
+      <div class='flex-item'><%= cocktail.input :picture %></div>
+      <div><%= cocktail.input :picture_cache, as: :hidden %></div>
+      <div><%= cocktail.button :submit %></div>
     <% end %>
   </div>
 </div>
