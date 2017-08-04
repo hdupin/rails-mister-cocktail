@@ -1,9 +1,13 @@
-<h1>New Dose for Dose#new</h1>
-<p>Find me in app/views/dose/new.html.erb</p>
+<div class='new_dose_title'>
+  <h1><strong>Nova Dose</strong></h1>
+</div>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%#= f.input :cocktail_id, :as => :hidden, :input_html => { :value => @cocktail.id }%>
-  <%= f.association :ingredient, value_method: :id, label_method: :ingredient_name %>
-  <%= f.button :submit %>
-<% end %>
+
+<div class='new_dose_form'>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%#= f.input :cocktail_id, :as => :hidden, :input_html => { :value => @cocktail.id }%>
+    <%= f.association :ingredient, value_method: :id, label_method: :ingredient_name %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
